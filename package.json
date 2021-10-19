@@ -1,6 +1,6 @@
 {
     "name": "@rosinfo.tech/eslint-config-react",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "access": "public",
     "main": "index.js",
     "publishConfig": {
