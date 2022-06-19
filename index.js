@@ -54,6 +54,8 @@ module.exports = {
                 "closingSlash": "never"
             }
         ],
+        "react/jsx-uses-react": 1,
+        "react/jsx-uses-vars": 1,
         "react/jsx-wrap-multilines": [
             1,
             {
