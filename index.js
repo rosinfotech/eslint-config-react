@@ -33,9 +33,8 @@ module.exports = {
                 "when": "multiline"
             }
         ],
-        "react/jsx-sort-default-props": 1,
         "react/jsx-sort-props": [
-            1,
+            2,
             {
                 "callbacksLast": true,
                 "ignoreCase": false,
@@ -73,6 +72,7 @@ module.exports = {
             {
                 "skipUndeclared": true
             }
-        ]
+        ],
+        "react/sort-default-props": 2
     }
 };
