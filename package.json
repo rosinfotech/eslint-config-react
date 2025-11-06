@@ -1,6 +1,6 @@
 {
     "name": "@rosinfo.tech/eslint-config-react",
-    "version": "0.0.17",
+    "version": "0.0.18",
     "access": "public",
     "main": "index.js",
     "publishConfig": {
@@ -19,10 +19,16 @@
         "rosinfotech"
     ],
     "dependencies": {
-        "eslint-plugin-react": "^7.26.1",
-        "eslint-plugin-react-hooks": "^4.2.0"
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^7.0.1",
+        "eslint-plugin-react-refresh": "^0.4.24",
+        "eslint-plugin-sort-react-dependency-arrays": "^1.0.0"
     },
     "peerDependencies": {
-        "eslint": ">= 3"
+        "eslint": ">= 9.0.0",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^7.0.1",
+        "eslint-plugin-react-refresh": "^0.4.24",
+        "eslint-plugin-sort-react-dependency-arrays": "^1.0.0"
     }
 }

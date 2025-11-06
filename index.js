@@ -1,78 +1,74 @@
-module.exports = {
-    "rules": {
-        "react-hooks/exhaustive-deps": 1,
-        "react-hooks/rules-of-hooks": 2,
-        "react/jsx-closing-bracket-location": [
-            1,
-            "tag-aligned"
-        ],
-        "react/jsx-closing-tag-location": 1,
-        "react/jsx-curly-newline": [
-            1,
+import reactPlugin from 'eslint-plugin-react';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import reactRefreshPlugin from 'eslint-plugin-react-refresh';
+import sortReactDependencyArraysPlugin from 'eslint-plugin-sort-react-dependency-arrays';
+
+
+export default {
+    extends: [reactPlugin.configs.flat.recommended],
+
+    plugins: {
+        'react'                       : reactPlugin,
+        'react-hooks'                 : reactHooksPlugin,
+        'react-refresh'               : reactRefreshPlugin,
+        'sort-react-dependency-arrays': sortReactDependencyArraysPlugin,
+    },
+
+    disabledRules: {
+        'react/jsx-sort-props'    : 'off',
+        'react/react-in-jsx-scope': 'off',
+    },
+
+    rules: {
+        ...reactHooksPlugin.configs.recommended.rules,
+
+        'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+
+        'sort-react-dependency-arrays/sort': 'error',
+
+        'react/jsx-closing-tag-location': 'warn',
+        'react/jsx-curly-newline'       : [
+            'warn',
             {
-                "multiline": "consistent",
-                "singleline": "consistent"
-            }
+                multiline : 'consistent',
+                singleline: 'consistent',
+            },
         ],
-        "react/jsx-curly-spacing": [
-            1,
-            "always"
-        ],
-        "react/jsx-first-prop-new-line": [
-            1,
-            "multiline"
-        ],
-        "react/jsx-indent-props": [
-            1,
-            "first"
-        ],
-        "react/jsx-max-props-per-line": [
-            1,
+        'react/jsx-max-props-per-line': [
+            'warn',
             {
-                "maximum": 1,
-                "when": "multiline"
-            }
+                maximum: 1,
+                when   : 'multiline',
+            },
         ],
-        "react/jsx-sort-props": [
-            2,
+        'react/jsx-tag-spacing': [
+            'warn',
             {
-                "callbacksLast": true,
-                "ignoreCase": false,
-                "noSortAlphabetically": false,
-                "reservedFirst": true,
-                "shorthandFirst": false,
-                "shorthandLast": true
-            }
+                afterOpening     : 'never',
+                beforeClosing    : 'allow',
+                beforeSelfClosing: 'always',
+                closingSlash     : 'never',
+            },
         ],
-        "react/jsx-tag-spacing": [
-            1,
+        'react/jsx-uses-react'     : 'warn',
+        'react/jsx-uses-vars'      : 'warn',
+        'react/jsx-wrap-multilines': [
+            'warn',
             {
-                "afterOpening": "never",
-                "beforeClosing": "allow",
-                "beforeSelfClosing": "always",
-                "closingSlash": "never"
-            }
+                arrow      : 'parens-new-line',
+                assignment : 'parens-new-line',
+                condition  : 'parens-new-line',
+                declaration: 'parens-new-line',
+                logical    : 'parens-new-line',
+                prop       : 'parens-new-line',
+                return     : 'parens-new-line',
+            },
         ],
-        "react/jsx-uses-react": 1,
-        "react/jsx-uses-vars": 1,
-        "react/jsx-wrap-multilines": [
-            1,
-            {
-                "arrow": "parens-new-line",
-                "assignment": "parens-new-line",
-                "condition": "parens-new-line",
-                "declaration": "parens-new-line",
-                "logical": "parens-new-line",
-                "prop": "parens-new-line",
-                "return": "parens-new-line"
-            }
-        ],
-        "react/prop-types": [
-            1,
-            {
-                "skipUndeclared": true
-            }
-        ],
-        "react/sort-default-props": 2
-    }
+    },
+
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
 };
